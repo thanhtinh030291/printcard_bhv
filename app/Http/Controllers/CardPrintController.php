@@ -29,7 +29,7 @@ class CardPrintController extends AppBaseController
         $this->cardPrintRepository = $cardPrintRepo;
         //$list_name_remember = CardPrint::select('name_remember')->distinct()->get()->pluck('name_remember','name_remember');
         $latest_name_remember = CardPrint::latest('id')->first();
-        $latest_name_remember = $latest_name_remember->name_remember;
+        $latest_name_remember = isset($latest_name_remember->name_remember) ? $latest_name_remember->name_remember : null;
         $latest_name_remember = $latest_name_remember ? $latest_name_remember  : "";
         View::share('latest_name_remember', $latest_name_remember);
     }

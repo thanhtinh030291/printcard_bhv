@@ -18,8 +18,8 @@ class CreateCardPrintTable extends Migration
             $table->string('name')->nullable();
             $table->string('policy_no')->nullable();
             $table->string('member_no')->nullable();
-            $table->date('valid_from')->nullable();
-            $table->date('valid_to')->nullable();
+            $table->string('valid_from')->nullable();
+            $table->string('valid_to')->nullable();
             $table->string('plan_type')->nullable();
             $table->string('op')->nullable();
             $table->string('dt')->nullable();

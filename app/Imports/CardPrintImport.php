@@ -26,20 +26,29 @@ class CardPrintImport implements ToModel, WithStartRow
     public function model(array $row)
     {
         Auth::user()->id;
+        
         $data = [
             'name'     => trim($row[1]),
             'policy_no'    => trim($row[2]),
-            'text_valid'    => trim($row[3]),
-            'valid_to'      => $row[4] != "" ?  Carbon::createFromFormat('d/m/Y', $row[4])->format('Y-m-d') : null,
-            'plan_type'     => trim($row[5]),
-            'barcode'       => trim($row[6]),
-            'pos'           => trim($row[7]),
-            'hcm_hn'        => trim($row[8]),
-            'note'          => trim($row[9]),
+            'member_no'    => trim($row[3]),
+            'valid_from'      => trim($row[4]),
+            'valid_to'     => trim($row[5]),
+            'plan_type'       => trim($row[6]),
+            'op'           => trim($row[7]),
+            'dt'        => trim($row[8]),
+            'co_payment'          => trim($row[9]),
+            'deductible'          => trim($row[10]),
+            'medical_check_up'          => trim($row[11]),
+            'waiting_period'          => trim($row[12]),
+            'exclusion_1'          => trim($row[13]),
+            'exclusion_2'          => trim($row[14]),
+            'first_year'          => trim($row[15]),
+            'type'          => trim($row[15]),
             'name_remember' => $this->name_remember,
             'created_user'  => $this->user_id,
             'update_user'   => $this->user_id,
         ];
+        
         return new CardPrint($data);
         
     }
