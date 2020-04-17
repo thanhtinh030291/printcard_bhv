@@ -18,14 +18,5 @@
     </div>
 @endsection
 @push('scripts')
-<script src="{{asset('js/JsBarcode.all.min.js')}}"></script>
-<script>
-    var barcode = $('#value_barcode').text();
-    barcode = barcode.replace(/(\*)/gm,"");
-    JsBarcode("#barcode", barcode , {
-        width: 1,
-        height:40,
-        fontSize:10
-    });
-</script>
+
 @endpush

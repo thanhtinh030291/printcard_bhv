@@ -43,7 +43,7 @@ class CardPrintImport implements ToModel, WithStartRow
             'exclusion_1'          => trim($row[13]),
             'exclusion_2'          => trim($row[14]),
             'first_year'          => trim($row[15]),
-            'type'          => trim($row[15]),
+            'type'          => trim($row[16]),
             'name_remember' => $this->name_remember,
             'created_user'  => $this->user_id,
             'update_user'   => $this->user_id,

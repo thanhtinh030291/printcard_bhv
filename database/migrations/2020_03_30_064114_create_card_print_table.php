@@ -25,7 +25,7 @@ class CreateCardPrintTable extends Migration
             $table->string('dt')->nullable();
             $table->string('co_payment')->nullable();
             $table->string('deductible')->nullable();
-            $table->integer('medical_check_up')->nullable();
+            $table->string('medical_check_up')->nullable();
             $table->string('waiting_period')->nullable();
             $table->string('exclusion_1')->nullable();
             $table->string('exclusion_2')->nullable();
