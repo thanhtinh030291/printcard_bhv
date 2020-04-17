@@ -192,7 +192,7 @@
                 {{$lang == 'vn' ? "Thời gian chờ: " : "Waiting Period: "}} {{$cardPrint->waiting_period}}
             </div>
             <div style="float: left; width: 40%">
-                {{$cardPrint->exclusion_1}}   {{$cardPrint->exclusion_2}} ...
+                {{$cardPrint->exclusion_1}}   {{$cardPrint->exclusion_2}}
             </div>
             <div style="float: right; width: 10%">
                 {{$cardPrint->first_year}}
