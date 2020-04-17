@@ -168,7 +168,7 @@ class CardPrintController extends AppBaseController
             return redirect(route('cardPrints.index'));
         }
         $file_name = Str::slug($cardPrint->name ."-".$cardPrint->policy_no);
-        $mpdf = new \Mpdf\Mpdf(['tempDir' => base_path('resources/fonts/')]);
+        $mpdf = new \Mpdf\Mpdf(['tempDir' => base_path('resources/fonts/') ,'format' => 'A4-L']);
         
         $mpdf->WriteHTML(view('card_prints.pdf', compact('cardPrint'))->render());
         
@@ -197,7 +197,7 @@ class CardPrintController extends AppBaseController
         if ($zip->open(public_path("cache_file/".$fileName), ZipArchive::CREATE) === TRUE)
         {
             foreach ($cardPrints as $key => $value) {
-                $mpdf = new \Mpdf\Mpdf(['tempDir' => base_path('resources/fonts/')]);
+                $mpdf = new \Mpdf\Mpdf(['tempDir' => base_path('resources/fonts/'),'format' => 'A4-L']);
                 $cardPrint = $value;
                 $mpdf->WriteHTML(view('card_prints.pdf', compact('cardPrint'))->render());
                 $content = $mpdf->Output('filename.pdf',\Mpdf\Output\Destination::STRING_RETURN);

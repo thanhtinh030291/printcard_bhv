@@ -85,33 +85,123 @@
         </style>
     </head>
 </head>
+@php
+    switch ($cardPrint->type) {
+        case 'F':
+            $img = 'images/FO-ENG-PCV.jpg';
+            $lang = 'en';
+            break;
+        case 'T':
+            $img = 'images/FO-VN-PCV.jpg';
+            $lang = 'vn';
+            break;
+        case 'ME':
+            $img = 'images/MA-ENG-PCV.jpg';
+            $lang = 'en';
+            break;
+        case 'MV':
+            $img = 'images/MA-VN-PCV.jpg';
+            $lang = 'vn';
+            break;
+        case 'BE':
+            $img = 'images/FO-VN-PCV-BR.jpg';
+            $lang = 'vn';
+            break;
+        case 'BV':
+            $img = 'images/MA-VN-PCV-BR.jpg';
+            $lang = 'vn';
+            break;
+        default:
+            $img = 'images/MA-VN-PCV-BR.jpg';
+            $lang = 'vn';
+            break;
+    }
+@endphp
 <body>
-    <div  style="height: 250px; width:400px; background-image: transparent url('{{ asset('images/1.png')}}') fixed right top no-repeat; background-size: cover">
-        <div style="padding-top:165px ;padding-left:20px ; height: 50px" >
-            <p style=" font-size: 24px">{{$cardPrint->name}}</p>
-            <p style=" font-size: 18px">{{$cardPrint->policy_no}}</p>
+    
+    <div  style="height: 290px; width:900px;
+    padding-left: 45px; padding-right: 520px; background-image: transparent url('{{ asset($img)}}') fixed right top no-repeat; background-size: cover">
+        <div style="height:112px"></div>
+        <div>
+            <div style="float: left; width: 30%; font-size: 14px;" >
+                {{$lang == 'vn' ? "Họ tên:" : "Name:"}}
+            </div>
+            <div style="float: left; width: 70% ;font-size: 14px; font-weight: bold ;" >
+                {{$cardPrint->name}}
+            </div>
+        </div>
+        <div style=" margin:2px 0px 0px 0px">
+            <div style="float: left; width: 30%; font-size: 14px;">
+                {{$lang == 'vn' ? "Hợp đồng số:" : "Policy No.:"}}
+            </div>
+            <div style="float: left; width: 70% ; font-size: 14px;">
+                {{$cardPrint->policy_no}}
+            </div>
+        </div>
+        <div style=" margin:2px 0px 0px 0px" >
+            <div style="float: left; width: 30% ; font-size: 14px;">
+                {{$lang == 'vn' ? "Mã số thành viên:" : "Menber No.:"}}
+            </div>
+            <div style="float: left; width: 70% ; font-size: 14px;">
+                {{$cardPrint->member_no}}
+            </div>
+        </div>
+        <div style=" margin:2px 0px 0px 0px">
+            <div style="float: left; width: 30%; font-size: 14px;">
+                {{$lang == 'vn' ? "Hiệu lực từ:" : "Valid from:"}}
+            </div>
+            <div style="float: left; width: 30% ; font-size: 13px;">
+                {{$cardPrint->valid_from}}
+            </div>
+            <div style="float: left; width: 10% ;font-size: 14px;">
+                {{$lang == 'vn' ? "đến:" : "to"}}
+            </div>
+            <div style="float: left; width: 30% ;font-size: 13px;">
+                {{$cardPrint->valid_to}}
+            </div>
+        </div>
+        <hr style=" margin: 5px 0px 5px 0px ;border: 0; border-top: 1px black solid; ">
+    
+        <div class="row" style="font-size: 12px;">
+            <div style="float: left; width: 40%">
+                {{$lang == 'vn' ? "Chương trình: " : "Plan Type: "}} {{$cardPrint->plan_type}}
+            </div>
+            <div style="float: left; width: 60% ; ">
+                {{$lang == 'vn' ? "Ngoại trú: " : "Outpatient: "}} {{$cardPrint->op}}
+            </div>
+        </div>
+        <div class="row" style="font-size: 12px; margin:2px 0px 0px 0px">
+            <div style="float: left; width: 40%">
+                {{$lang == 'vn' ? "Đồng thanh toán: " : "Co-payment: "}} {{$cardPrint->co_payment}}
+            </div>
+            <div style="float: left; width: 60%">
+                {{$lang == 'vn' ? "Nha Khoa: " : "Dental: "}} {{$cardPrint->dt}}
+            </div>
+        </div>
+        <div class="row" style="font-size: 12px; margin:2px 0px 0px 0px">
+            <div style="float: left; width: 40%">
+                {{$lang == 'vn' ? "Mức miễn thưởng: " : "Deductible: "}} {{$cardPrint->deductible}}
+            </div>
+            <div style="float: left; width: 60%">
+                {{$lang == 'vn' ? "Kiểm tra sức khỏe: " : "Medical check-up: "}} {{$cardPrint->medical_check_up}}
+            </div>
+        </div>
+        <hr style=" margin: 5px 0px 5px 0px ;border: 0; border-top: 1px  black solid ;">
+        <div class="row" style="font-size: 12px;">
+            <div style="float: left; width: 40%">
+                {{$lang == 'vn' ? "Thời gian chờ: " : "Waiting Period: "}} {{$cardPrint->waiting_period}}
+            </div>
+            <div style="float: left; width: 40%">
+                {{$cardPrint->exclusion_1}}   {{$cardPrint->exclusion_2}} ...
+            </div>
+            <div style="float: right; width: 10%">
+                {{$cardPrint->first_year}}
+            </div>
         </div>
     </div>
-    <br>
-    <br>
-    <div  style="height: 250px; width:402px; background-image: transparent url('{{ asset('images/2.png')}}') fixed right top no-repeat; background-size: cover">
-        <table>
-            <tbody>
-                <tr>
-                    <td style="padding-top:30px ;padding-left:20px ; height: 70px ; width:290px " >
-                        <p style=" font-size: 15px">{{$cardPrint->plan_type}}</p>
-                        <br>
-                        <p style=" font-size: 15px " class="t">{{$cardPrint->text_valid}} {{ Carbon\Carbon::parse($cardPrint->valid_to)->format('d/m/Y')}}</p>
-                    </td>
-                    <td style="padding-top:40px ;padding-left:20px ; height: 50px ; text-align: center " >
-                        <barcode code="{{str_replace("*","",$cardPrint->barcode)}}" type="C93"  height="1.3" />
-                        <div style="text-align: center">{{$cardPrint->policy_no}}</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        
-    </div>
+    
+    
+    
 
     
 </body>

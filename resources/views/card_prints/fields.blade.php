@@ -12,55 +12,78 @@
 
 <!-- Text Valid Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('text_valid', 'Text Valid:') !!}
-    {!! Form::text('text_valid', null, ['class' => 'form-control']) !!}
+    {!! Form::label('member_no', 'member_no:') !!}
+    {!! Form::text('member_no', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Valid To Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('valid_to', 'Valid To:') !!}
-    {!! Form::date('valid_to', null, ['class' => 'form-control','id'=>'valid_to']) !!}
+    {!! Form::label('valid_from', 'valid_from') !!}
+    {!! Form::text('valid_from', null, ['class' => 'form-control','id'=>'valid_to']) !!}
 </div>
-
-@push('scripts')
-    <script type="text/javascript">
-        $('#valid_to').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
-            useCurrent: false
-        })
-    </script>
-@endpush
 
 <!-- Plan Type Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('plan_type', 'Plan Type:') !!}
-    {!! Form::text('plan_type', null, ['class' => 'form-control']) !!}
+    {!! Form::label('valid_to', 'valid_to:') !!}
+    {!! Form::text('valid_to', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Barcode Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('barcode', 'Barcode:') !!}
-    {!! Form::text('barcode', null, ['class' => 'form-control']) !!}
+    {!! Form::label('plan_type', 'plan_type:') !!}
+    {!! Form::text('plan_type', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Pos Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('pos', 'Pos:') !!}
-    {!! Form::text('pos', null, ['class' => 'form-control']) !!}
+    {!! Form::label('op', 'op:') !!}
+    {!! Form::text('op', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Hcm-Hn Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('hcm_hn', 'Hcm Hn:') !!}
-    {!! Form::text('hcm_hn', null, ['class' => 'form-control']) !!}
+    {!! Form::label('dt', 'dt:') !!}
+    {!! Form::text('dt', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group col-sm-6">
+    {!! Form::label('co_payment', 'co_payment:') !!}
+    {!! Form::text('co_payment', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group col-sm-6">
+    {!! Form::label('deductible', 'deductible:') !!}
+    {!! Form::text('deductible', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group col-sm-6">
+    {!! Form::label('medical_check_up', 'medical_check_up:') !!}
+    {!! Form::text('medical_check_up', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group col-sm-6">
+    {!! Form::label('waiting_period', 'waiting_period:') !!}
+    {!! Form::text('waiting_period', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Note Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('note', 'Note:') !!}
-    {!! Form::text('note', null, ['class' => 'form-control']) !!}
+    {!! Form::label('exclusion_1', 'exclusion_1:') !!}
+    {!! Form::text('exclusion_1', null, ['class' => 'form-control']) !!}
 </div>
 
+<div class="form-group col-sm-6">
+    {!! Form::label('exclusion_2', 'exclusion_2:') !!}
+    {!! Form::text('exclusion_2', null, ['class' => 'form-control']) !!}
+</div>
+<div class="form-group col-sm-6">
+    {!! Form::label('type', 'type:') !!}
+    {!! Form::text('type', null, ['class' => 'form-control']) !!}
+</div>
+<div class="form-group col-sm-6">
+    {!! Form::label('first_year', 'first_year:') !!}
+    {!! Form::text('first_year', null, ['class' => 'form-control']) !!}
+</div>
 <!-- Created User Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('created_user', 'Created User:') !!}
